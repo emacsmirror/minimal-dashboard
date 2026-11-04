@@ -9,7 +9,7 @@ responsiveness and layout control.
 The use case is for those who do not want to see anything else on the
 screen apart from the emacs logo and/or a small text blurb.
 
-Version: 0.1.4
+Version: 0.1.5
 
 ![screenshot](screenshot.png)
 
@@ -93,7 +93,10 @@ Following customizable variables are present:
 
 - `minimal-dashboard-buffer-name` - name of the dashboard buffer.
 - `minimal-dashboard-image-path` - path to the image to display (SVG, PNG, etc).
-- `minimal-dashboard-text` - text displayed below the image.
+- `minimal-dashboard-text` - text displayed in the dashboard (string, or function re-evaluated on each call).
+- `minimal-dashboard-image-position` - image position on a 3x3 grid: `top-left`, `top-center`, `top-right`, `center-left`, `center` (default), `center-right`, `bottom-left`, `bottom-center`, `bottom-right`.
+- `minimal-dashboard-text-position` - any grid position above, or `below-image` (default) / `above-image` to attach the text to the image.
+- `minimal-dashboard-gap` - blank rows between image and attached text.
 - `minimal-dashboard-enable-resize-handling` -  re-center layout on window resize.
 - `minimal-dashboard-modeline-shown` - visibility of the modeline.
 - `minimal-dashboard-image-scale` - scale of the dashboard image.

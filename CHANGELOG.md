@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## 0.1.5
+
+- Add `minimal-dashboard-image-position`, `minimal-dashboard-text-position` and `minimal-dashboard-gap`: place image and text independently on a 3x3 grid, or attach text above/below the image
+- Add `minimal-dashboard-mode` (derived from `special-mode`); `minimal-dashboard-mode-hook` now runs when the mode is enabled, before the contents are drawn
+- Fix: `keymap-set` required Emacs 29 although Emacs 27.1 is declared; use `define-key`
+- Fix: resize redraw used the selected window's size instead of the dashboard window's
+- Fix: function values of `minimal-dashboard-text` are re-evaluated on every call instead of being frozen
+- Fix: setters no longer call the text function at configuration time
+- Fix: layout uses window body size (excludes mode-line); line numbers, `hl-line` and line truncation are disabled locally
+- Layout is computed in pixels using the window's (zoomed) default-face character size, and redraws on `text-scale-mode-hook`, so `text-scale-adjust` keeps everything aligned
+- Skip redraws when the window body size did not change; drop the per-buffer `kill-buffer-hook` lambda
+
 ## 0.1.4
 
 - Update the resizing gif in README
